@@ -1,8 +1,10 @@
+using ContosoCrafts.WebSite.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddTransient<ProductJsonFileService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
