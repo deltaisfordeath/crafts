@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.card-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  padding: 1.5rem;
+  width: calc(50% - .75rem);
+  border: 3px dotted lightgray;
+  border-radius: 1rem;
+}
