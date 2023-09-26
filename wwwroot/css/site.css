@@ -35,3 +35,8 @@ body {
   border: 3px dotted lightgray;
   border-radius: 1rem;
 }
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+}

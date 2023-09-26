@@ -1,9 +1,10 @@
-using ContosoCrafts.WebSite.Services;
+using crafts.WebSite.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
 builder.Services.AddTransient<ProductJsonFileService>();
 var app = builder.Build();
 
@@ -24,5 +25,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
+app.MapBlazorHub();
 
 app.Run();

@@ -1,4 +1,5 @@
 ﻿@page
+@using crafts.Components;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,18 +9,6 @@
     <h1 class="display-4">Delta's Crafts</h1>
 </div>
 
-<div class="card-column">
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
 
-    @foreach (var product in Model.Products)
-    {
-        <div class="product-card">
-            <div class="card-img" style="background-image: url('@product.Image'); height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
-            <div class="card-body">
-                <h5 class="card-title">@product.Title</h5>
-                <div>@product.Description</div>
-                <hr />
-                <div>-@product.Maker</div>
-            </div>
-        </div>
-    }
-</div>
+<script src="_framework/blazor.server.js"></script>

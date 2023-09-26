@@ -1,4 +1,4 @@
-using ContosoCrafts.WebSite.Services;
+using crafts.WebSite.Services;
 using crafts.WebSite.Models;
 using Microsoft.AspNetCore.Mvc;
 
