@@ -21,5 +21,17 @@ namespace crafts.WebSite.Controllers
         {
             return ProductService.GetProducts();
         }
+
+        //[HttpPatch] "[FromBodyj]"
+        [Route("rate")]
+        [HttpGet]
+        public ActionResult Get(
+            [FromQuery] string ProductId, 
+            [FromQuery] int Rating
+            )
+        {
+            ProductService.AddRating(ProductId, Rating);
+            return Ok();
+        }
     }
 }
