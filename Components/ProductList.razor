@@ -17,32 +17,31 @@
                 <div class="product-footer">
                     <div>-@product.Maker</div>
                     <small class="text-muted">
-                        <button @onclick="(e => SelectProduct(product.Id))" 
-                            data-toggle="modal"
-                            data-target="#productModal"
+                        <button @onclick="(e => SelectProduct(product.Id))" data-toggle="modal" data-target="#productModal"
                             class="btn btn-primary">
                             More Info
                         </button>
                     </small>
                 </div>
-                
+
             </div>
         </div>
     }
 </div>
 
-@if(selectedProduct != null) 
+@if (selectedProduct != null)
 {
-    <div class="product-modal-container"@onclick="DeselectProduct" >
-        <div class="product-modal">
-        <div class="card-img"
-            style="background-image: url('@selectedProduct.Image'); height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+    <div class="product-modal-container" @onclick="DeselectProduct">
+        <div class="product-modal" @onclick:stopPropagation>
+            <div class="close-modal" @onclick="DeselectProduct">X</div>
+            <div class="card-img"
+                style="background-image: url('@selectedProduct.Image'); height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+            </div>
+            <h5 class="card-title">@selectedProduct.Title</h5>
+            <div>@selectedProduct.Description</div>
         </div>
-        <h5 class="card-title">@selectedProduct.Title</h5>
-        <div>@selectedProduct.Description</div>
     </div>
-    </div>
-    
+
 }
 
 @code {

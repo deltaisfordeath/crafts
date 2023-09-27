@@ -57,6 +57,7 @@ body {
 .product-modal {
   display: flex;
   flex-direction: column;
+  position: absolute;
   gap: 1.5rem;
   padding: 2rem;
   background-color: white;
@@ -64,4 +65,18 @@ body {
   z-index: 1001;
   border-radius: 1rem;
   width: 80vw;
+}
+
+.close-modal {
+  position: absolute;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.35rem;
+  top: 0.7rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal:hover {
+  background-color: rgba(100, 100, 100, 0.3);
 }
