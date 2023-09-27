@@ -40,3 +40,28 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.product-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.product-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
+  z-index: 1001;
+  border-radius: 1rem;
+  width: 80vw;
+}
