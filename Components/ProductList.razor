@@ -74,8 +74,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code {
-    Product selectedProduct;
-    string selectedProductId;
+    Product? selectedProduct;
+    string? selectedProductId;
 
     void SelectProduct(string productId)
     {
@@ -92,10 +92,10 @@
 
     int currentRating = 0;
     int voteCount = 0;
-    string voteLabel;
+    string voteLabel = default!;
     void GetCurrentRating()
     {
-        if (selectedProduct.Ratings == null)
+        if (selectedProduct?.Ratings == null)
         {
             currentRating = 0;
             voteCount = 0;
@@ -111,6 +111,7 @@
 
     void SubmitRating(int rating)
     {
+        if(selectedProductId == null) return;
         var prodId = selectedProductId;
         ProductService.AddRating(selectedProductId, rating);
         SelectProduct(prodId);
